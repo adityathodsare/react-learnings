@@ -1,0 +1,75 @@
+card.jsx 
+import React from "react";
+
+function Card({ imageName, message, imgUrl }) {
+  return (
+    <>
+      <figure class="bg-slate-100 rounded-xl p-8 dark:bg-slate-800 ">
+        <img
+          class="w-24 h-24 rounded-full mx-auto"
+          src={imgUrl}
+          alt=""
+          width="384"
+          height="512"
+        />
+        <div class="pt-6 space-y-4">
+          <blockquote>
+            <p class="text-lg font-medium">“{imageName}”</p>
+          </blockquote>
+          <figcaption class="font-medium">
+            <div>{message}</div>
+          </figcaption>
+        </div>
+      </figure>
+    </>
+  );
+}
+export default Card;
+
+
+App.jsx
+
+import "./App.css";
+import Card from "./components/card.jsx";
+
+function App() {
+  return (
+    <>
+      <h1 className="text-3xl font-bold p-4 bg-slate-900 rounded-xl mb-4 ">
+        hello its aditya
+      </h1>
+      <Card
+        imageName="raftar"
+        message="Ra Ra Ra "
+        imgUrl="https://imgs.search.brave.com/lRxNNXUVPfb7z38Yb-ro2u9JqF8RNmwW3IP0H_d4q3k/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy83/LzcxL1JhZnRhYXJf/c25hcHBlZF9vbl90/aGVfc2V0c19vZl9E/YW5jZV9JbmRpYV9E/YW5jZV8oY3JvcHBl/ZCkuanBn"
+      />
+      <Card
+        imageName="kr$na"
+        message="doller sign one time "
+        imgUrl="https://imgs.search.brave.com/fPw_6AsLqnkjhSDx13vVacxyI__WD1AhhL4yC86M5tk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yb2xs/aW5nc3RvbmVpbmRp/YS5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjEvMDMvS1JT/TkEtc2NhbGVkLWUx/NjE2MzkxMTg4MTA3/LTk2MHg3NTQuanBn"
+      />
+      <Card
+        imageName="stanny bhai "
+        message="hindi matrabhasha "
+        imgUrl="https://imgs.search.brave.com/oAiU-P4Suee88VsFn2YDhKgocrVu_a012QHK3Yfp8BA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93MC5w/ZWFrcHguY29tL3dh/bGxwYXBlci81NzEv/OTc1L0hELXdhbGxw/YXBlci1tYy1zdGFu/LWNhdGNoZXIta3J1/cGFsMzMzLW1jLXN0/YW4tbWNzdGFuLXJh/cHBlci10aHVtYm5h/aWwuanBn"
+      />
+    </>
+  );
+}
+
+export default App;
+
+main.jsx
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import Card from "./components/card.jsx";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+
